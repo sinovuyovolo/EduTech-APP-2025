@@ -1,0 +1,67 @@
+/* Custom CSS variables for easy theme management */
+:root {
+    --bg-light: #f9fafb; /* gray-50 */
+    --text-light: #111827; /* gray-900 */
+    --card-light: #ffffff;
+    --border-light: #d1d5db; /* gray-300 */
+    
+    --bg-dark: #111827; /* gray-900 */
+    --text-dark: #f9fafb; /* gray-50 */
+    --card-dark: #1f2937; /* gray-800 */
+    --border-dark: #4b5563; /* gray-600 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+::-webkit-scrollbar-track { 
+    background: var(--border-light); 
+}
+::-webkit-scrollbar-thumb { 
+    background: #4f46e5; 
+    border-radius: 10px; 
+}
+body.dark-mode ::-webkit-scrollbar-track { 
+    background: var(--border-dark); 
+}
+
+/* A subtle glow effect for interactive elements */
+.glow-on-hover { 
+    transition: box-shadow 0.3s ease-in-out; 
+}
+.glow-on-hover:hover { 
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.6); 
+}
+
+/* Animation for elements appearing */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.fade-in { 
+    animation: fadeIn 0.5s ease-out forwards; 
+}
+
+/* View switching */
+.view { 
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
+}
